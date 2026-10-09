@@ -2,7 +2,7 @@ const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 
 async function fetchBusAlerts() {
   try {
-    // format=text on browser can be used to check if the stuff works 
+    // https://gtfsrt.ttc.ca/alerts/subway?format=text on browser can be used to check if the stuff works 
     const response = await fetch("https://gtfsrt.ttc.ca/alerts/subway?format=binary");
 
     if (!response.ok) {
