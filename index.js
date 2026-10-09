@@ -66,14 +66,15 @@ async function updateTTCStatus(){
         let statusMessage = '';
         let statusState = '';
         const maxStatusLength = 128;
-        // no service (red): 
-        // reduced service (idle):
-        // all clear (green): 
         
         // for splitting the string properly, removes characters leading up to first ':'
         const tempStatusMessage = highestPriorityAlert.alert.headerText?.translation?.[0]?.text
                                 .split(':').slice(1).join(':').trim();
         const alertStatusMessage = tempStatusMessage.length > 128 ? tempStatusMessage.slice(0, maxStatusLength-3) + '...': tempStatusMessage;                           
+        
+        // no service (dnd): 
+        // reduced service (idle):
+        // all clear (online): 
         switch(highestPriorityAlertInfo.priority){
             case 2:
                 statusState = 'dnd';
