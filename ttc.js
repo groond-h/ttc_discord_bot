@@ -27,7 +27,7 @@ async function fetchBusAlerts() {
         const descriptionText = alert.descriptionText?.translation?.[0]?.text || '';
         const start = new Date(alert.activePeriod?.[0].start * 1000);
         const end = new Date(alert.activePeriod?.[0].end * 1000);
-        const issue = alert.effect
+        const issue = alert.effect;
         console.log(`[Alert ID: ${entity.id}]`);
         console.log(`Header: ${headerText} length: ${headerText.length}`);
         console.log(`Time: ${start} to ${end}`);
